@@ -1,0 +1,21 @@
+
+spring:
+  rabbitmq:
+    username: qqukpjlx
+    password: skybBo_vOhKjbt0DaEPJ11US2Br76tnr
+    host: dingo.rmq.cloudamqp.com
+    virtual-host: qqukpjlx
+
+  datasource:
+    url: jdbc:sqlite:../producer1/db.sqlite
+    driver-class-name: org.sqlite.JDBC
+    username: sa
+    password: password
+
+  jpa:
+    hibernate:
+      ##무조건 none이어야 한다. -> create나 create-drop으로 되어있다곰 하면, 안됨
+      ## create면 producer쪽에 db가 사라짐
+      ddl-auto: none
+    database-platform: org.hibernate.community.dialect.SQLiteDialect
+    show-sql: true
